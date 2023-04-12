@@ -16,6 +16,8 @@ from enums.emoji import Emoji
 from utils import formatter
 from utils.camping_argparser import CampingArgumentParser
 
+from notify import send_email
+
 LOG = logging.getLogger(__name__)
 log_formatter = logging.Formatter(
     "%(asctime)s - %(process)s - %(levelname)s - %(message)s"
@@ -318,6 +320,8 @@ def main(parks, json_output=False):
             args.show_campsite_info,
         )
     print(output)
+    if has_availabilities:
+        send_email(output)
     return has_availabilities
 
 

@@ -1,0 +1,1 @@
+python3 camping.py --start-date 2023-07-22 --end-date 2023-07-24 --parks 232448 232450 232447 10004152
