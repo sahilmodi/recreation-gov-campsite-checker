@@ -7,6 +7,7 @@ import sys
 from collections import defaultdict
 from datetime import datetime, timedelta
 from itertools import count, groupby
+from typing import List
 
 from dateutil import rrule
 
@@ -274,7 +275,7 @@ def generate_json_output(info_by_park_id):
     return json.dumps(availabilities_by_park_id), has_availabilities
 
 
-def remove_comments(lines: list[str]) -> list[str]:
+def remove_comments(lines: List[str]) -> List[str]:
     new_lines = []
     for line in lines:
         if line.startswith("#"):  # Deal with comment as the first character
